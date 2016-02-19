@@ -4,6 +4,7 @@ import asyncio
 
 from henson import Extension
 from raven.base import Client
+from raven.conf import defaults
 from raven.utils.imports import import_string
 
 __all__ = ('Sentry',)
@@ -16,11 +17,11 @@ class Sentry(Extension):
 
     DEFAULT_SETTINGS = {
         'RAVEN_IGNORE_EXCEPTIONS': (),
-        'SENTRY_AUTO_LOG_STACKS': None,
-        'SENTRY_EXCLUDE_PATHS': None,
+        'SENTRY_AUTO_LOG_STACKS': defaults.AUTO_LOG_STACKS,
+        'SENTRY_EXCLUDE_PATHS': (),
         'SENTRY_INCLUDE_PATHS': (),
-        'SENTRY_MAX_LENGTH_LIST': None,
-        'SENTRY_MAX_LENGTH_STRING': None,
+        'SENTRY_MAX_LENGTH_LIST': defaults.MAX_LENGTH_LIST,
+        'SENTRY_MAX_LENGTH_STRING': defaults.MAX_LENGTH_STRING,
         'SENTRY_NAME': None,
         'SENTRY_PROCESSORS': None,
         'SENTRY_RELEASE': None,
@@ -43,6 +44,9 @@ class Sentry(Extension):
                 be initialized.
         """
         super().init_app(app)
+
+        if not app.settings['SENTRY_NAME']:
+            app.settings['SENTRY_NAME'] = app.name
 
         if not self._client:
             self._client = _make_client(app)
