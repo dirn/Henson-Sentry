@@ -62,7 +62,7 @@ author = 'Andy Dirnberger'
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = pkg_resources.get_distribution('henson').version
+release = pkg_resources.get_distribution('henson-sentry').version
 # The short X.Y version.
 version = release.rsplit('.', 1)[0]
 
