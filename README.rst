@@ -1,23 +1,13 @@
-=============
-Henson-Sentry
-=============
+============================
+Henson-Sentry |build status|
+============================
+
+.. |build status| image:: https://travis-ci.org/dirn/Henson-Sentry.svg?branch=master
+   :target: https://travis-ci.org/dirn/Henson-Sentry
 
 A library for integrating Sentry into a Henson application.
 
-Installation
-============
-
-.. code::
-
-    $ python -m pip install Henson-Sentry
-
-Quickstart
-==========
-
-.. code::
-
-    from henson import Application
-    from henson_sentry import Sentry
-
-    app = Application('application-with-sentry')
-    Sentry(app)
+* `Documentation <https://henson-sentry.rtfd.org>`_
+* `Installation <https://henson-sentry.readthedocs.org/en/latest/#installation>`_
+* `Changelog <https://henson-sentry.readthedocs.org/en/latest/changes.html>`_
+* `Source <https://github.com/dirn/Henson-Sentry>`_
