@@ -1,6 +1,8 @@
 """A Henson plugin to integrate Sentry."""
 
 import asyncio
+import os as _os
+import pkg_resources as _pkg_resources
 
 from henson import Extension
 from raven.base import Client
@@ -9,7 +11,16 @@ from raven.utils.imports import import_string
 
 __all__ = ('Sentry',)
 
-__version__ = '0.0.1'
+try:
+    _dist = _pkg_resources.get_distribution(__name__)
+    if not __file__.startswith(_os.path.join(_dist.location, __name__)):
+        # Manually raise the exception if there is a distribution but
+        # it's installed from elsewhere.
+        raise _pkg_resources.DistributionNotFound
+except _pkg_resources.DistributionNotFound:
+    __version__ = 'development'
+else:
+    __version__ = _dist.version
 
 
 class Sentry(Extension):
