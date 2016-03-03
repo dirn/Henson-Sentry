@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import sys
 
@@ -27,7 +27,7 @@ setup(
     description='A library for integrating Sentry into a Henson application',
     long_description=read('README.rst'),
     license='MIT',
-    packages=find_packages(exclude=['tests']),
+    py_modules=['henson_sentry'],
     zip_safe=False,
     install_requires=[
         'Henson',
