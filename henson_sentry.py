@@ -77,7 +77,6 @@ class Sentry(Extension):
 
     @asyncio.coroutine
     def _after_message(self, app, message):
-        print('hi')
         self._client.context.clear()
 
     @asyncio.coroutine
