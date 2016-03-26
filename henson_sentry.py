@@ -5,9 +5,10 @@ import os as _os
 import pkg_resources as _pkg_resources
 
 from henson import Extension
-from raven.base import Client
+from raven import Client
 from raven.conf import defaults
 from raven.utils.imports import import_string
+from raven_aiohttp import AioHttpTransport
 
 __all__ = ('Sentry',)
 
@@ -38,7 +39,7 @@ class Sentry(Extension):
         'SENTRY_RELEASE': None,
         'SENTRY_SITE_NAME': None,
         'SENTRY_TAGS': None,
-        'SENTRY_TRANSPORT': None,
+        'SENTRY_TRANSPORT': AioHttpTransport,
     }
 
     REQUIRED_SETTINGS = (

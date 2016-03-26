@@ -59,7 +59,8 @@ The following configuration settings can be added to the application.
 |                              | associated with all events. Default ``None`` |
 +------------------------------+----------------------------------------------+
 | ``SENTRY_TRANSPORT``         | The HTTP transport class that will be used   |
-|                              | to transmit events. Default ``None``         |
+|                              | to transmit events. Default                  |
+|                              | :class:`~raven_aiohttp.AioHttpTransport`     |
 +------------------------------+----------------------------------------------+
 
 Usage
