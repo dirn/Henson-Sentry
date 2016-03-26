@@ -31,7 +31,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'Henson',
-        'raven',
+        'raven-aiohttp',
     ],
     tests_require=[
         'pytest',

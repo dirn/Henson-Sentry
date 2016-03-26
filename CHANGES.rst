@@ -3,6 +3,8 @@ Version 0.2.0
 
 Release TBD
 
+- Use the transport provided by ``raven-aiohttp`` by default
+
 Version 0.1.0
 -------------
 
