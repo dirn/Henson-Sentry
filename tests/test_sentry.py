@@ -2,6 +2,8 @@
 
 import asyncio
 
+from henson_sentry import Sentry
+
 
 def test_capture_exception(sentry, test_app, event_loop, cancelled_future,
                            queue):
@@ -52,3 +54,13 @@ def test_handle_exception_with_ignored_error(sentry, test_app, event_loop,
         test_app._process(cancelled_future, queue, event_loop))
 
     assert not sentry._client._events
+
+
+def test_no_dsn(test_app):
+    """Test that Sentry is disabled when there's no DSN."""
+    # Ensure that there's no DSN set for test_app.
+    del test_app.settings['SENTRY_DSN']
+
+    sentry = Sentry(test_app)
+
+    assert sentry._client is None

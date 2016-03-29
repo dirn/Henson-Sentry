@@ -30,6 +30,7 @@ class Sentry(Extension):
     DEFAULT_SETTINGS = {
         'RAVEN_IGNORE_EXCEPTIONS': (),
         'SENTRY_AUTO_LOG_STACKS': defaults.AUTO_LOG_STACKS,
+        'SENTRY_DSN': None,
         'SENTRY_EXCLUDE_PATHS': (),
         'SENTRY_INCLUDE_PATHS': (),
         'SENTRY_MAX_LENGTH_LIST': defaults.MAX_LENGTH_LIST,
@@ -42,10 +43,6 @@ class Sentry(Extension):
         'SENTRY_TRANSPORT': AioHttpTransport,
     }
 
-    REQUIRED_SETTINGS = (
-        'SENTRY_DSN',
-    )
-
     _client = None
 
     def init_app(self, app):
@@ -56,6 +53,10 @@ class Sentry(Extension):
                 be initialized.
         """
         super().init_app(app)
+
+        if not app.settings['SENTRY_DSN']:
+            app.logger.info('sentry.disabled')
+            return
 
         if not app.settings['SENTRY_NAME']:
             app.settings['SENTRY_NAME'] = app.name

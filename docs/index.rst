@@ -21,6 +21,8 @@ The following configuration settings can be added to the application.
 +------------------------------+----------------------------------------------+
 | ``SENTRY_DSN``               | The data source name used to identify that   |
 |                              | Sentry instance to which to send the logs.   |
+|                              | If no value is provided, Sentry will be      |
+|                              | disabled.                                    |
 +------------------------------+----------------------------------------------+
 | ``RAVEN_IGNORE_EXCEPTIONS``  | Exception types that will be ignored when    |
 |                              | sending exceptions to Sentry.                |
