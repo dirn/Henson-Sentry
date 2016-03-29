@@ -1,7 +1,7 @@
 Version 0.3.0
 -------------
 
-Release TBD
+Released 2016-03-29
 
 - Allow ``SENTRY_DSN`` to be empty; Sentry will be disabled
 
