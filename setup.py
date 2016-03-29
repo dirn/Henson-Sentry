@@ -20,7 +20,7 @@ def read(filename):
 
 setup(
     name='Henson-Sentry',
-    version='0.3.0',
+    version='0.4.0',
     author='Andy Dirnberger',
     author_email='andy@dirnberger.me',
     url='https://henson-sentry.rtfd.org',
