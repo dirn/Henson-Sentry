@@ -7,7 +7,7 @@ Henson-Sentry |build status|
 
 A library for integrating Sentry into a Henson application.
 
-* `Documentation <https://henson-sentry.rtfd.org>`_
-* `Installation <https://henson-sentry.readthedocs.org/en/latest/#installation>`_
-* `Changelog <https://henson-sentry.readthedocs.org/en/latest/changes.html>`_
+* `Documentation <https://henson-sentry.readthedocs.io>`_
+* `Installation <https://henson-sentry.readthedocs.io/en/latest/#installation>`_
+* `Changelog <https://henson-sentry.readthedocs.io/en/latest/changes.html>`_
 * `Source <https://github.com/dirn/Henson-Sentry>`_

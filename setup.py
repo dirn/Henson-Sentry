@@ -23,7 +23,7 @@ setup(
     version='0.4.0',
     author='Andy Dirnberger',
     author_email='andy@dirnberger.me',
-    url='https://henson-sentry.rtfd.org',
+    url='https://henson-sentry.readthedocs.io',
     description='A library for integrating Sentry into a Henson application',
     long_description=read('README.rst'),
     license='MIT',

@@ -3,8 +3,8 @@ Henson-Sentry
 =============
 
 Henson-Sentry is a library that helps to easily incorporate logging to
-`Sentry <https://sentry.readthedocs.org>`_ into a
-`Henson <https://henson.readthedocs.org>`_ application.
+`Sentry <https://sentry.readthedocs.io>`_ into a
+`Henson <https://henson.readthedocs.io>`_ application.
 
 Installation
 ============
